@@ -1,0 +1,32 @@
+{
+  "name": "pinus-connector-tcp",
+  "version": "1.0.0",
+  "description": "tcp connector for pinus",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bruce48x/pinus-connector-tcp.git"
+  },
+  "keywords": [
+    "pinus",
+    "pomelo",
+    "nodejs"
+  ],
+  "author": "bruce48x",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bruce48x/pinus-connector-tcp/issues"
+  },
+  "homepage": "https://github.com/bruce48x/pinus-connector-tcp#readme",
+  "dependencies": {
+    "pinus": "^1.7.0",
+    "pinus-protocol": "^1.7.0",
+    "ws": "^8.16.0"
+  },
+  "devDependencies": {
+    "@types/ws": "^8.5.10"
+  }
+}
