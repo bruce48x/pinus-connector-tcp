@@ -1,11 +1,9 @@
-import {Stream} from 'stream';
-import * as util from 'util';
-import * as net from 'net';
+import {Stream} from 'node:stream';
+import * as net from 'node:net';
 import {Package} from 'pinus-protocol';
 import {getLogger} from 'pinus-logger';
-import {ISocket} from 'pinus/lib/interfaces/ISocket';
 import {IHybridSocket} from './IHybridSocket';
-import * as path from 'path';
+import * as path from 'node:path';
 
 let logger = getLogger('pinus', path.basename(__filename));
 

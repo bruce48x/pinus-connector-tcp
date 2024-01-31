@@ -1,7 +1,6 @@
-import { EventEmitter } from 'events';
-import * as util from 'util';
-import * as net from 'net';
-import * as utils from 'pinus/lib/util/utils';
+import { EventEmitter } from 'node:events';
+import * as net from 'node:net';
+import * as utils from '../util/utils';
 import { TcpSocket } from './tcpsocket';
 
 let ST_STARTED = 1;

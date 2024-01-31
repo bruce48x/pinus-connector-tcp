@@ -1,18 +1,16 @@
-import * as net from 'net';
-import * as tls from 'tls';
-import { EventEmitter } from 'events';
+import * as net from 'node:net';
+import * as tls from 'node:tls';
+import { EventEmitter } from 'node:events';
 import { HybridSocket } from './hybridsocket';
 import { HybridSwitcher as Switcher, HybridSwitcherOptions } from './hybrid/switcher';
 import { HandshakeCommand } from './commands/handshake';
 import { HeartbeatCommand } from './commands/heartbeat';
 import * as Kick from './commands/kick';
 import * as coder from './common/coder';
-import { DictionaryComponent } from 'pinus/lib/components/dictionary';
-import { ProtobufComponent } from 'pinus/lib/components/protobuf';
-import { IComponent } from 'pinus/lib/interfaces/IComponent';
-import { pinus } from 'pinus';
-import { IConnector } from 'pinus/lib/interfaces/IConnector';
+import { ProtobufComponent } from './components/protobuf';
+import { pinus, DictionaryComponent } from 'pinus';
 import { IHybridSocket } from './hybrid/IHybridSocket';
+import { IConnector } from './interfaces/IConnector';
 
 let curId = 1;
 
@@ -43,7 +41,6 @@ export class HybridConnector extends EventEmitter implements IConnector {
     connector: IConnector;
     dictionary: DictionaryComponent;
     protobuf: ProtobufComponent;
-    decodeIO_protobuf: IComponent;
 
     listeningServer: net.Server | tls.Server;
 
@@ -85,10 +82,9 @@ export class HybridConnector extends EventEmitter implements IConnector {
             self.emit('connection', hybridsocket);
         };
 
-        this.connector = app.components.__connector__.connector;
+        this.connector = app.components.__connector__.connector as IConnector;
         this.dictionary = app.components.__dictionary__;
-        this.protobuf = app.components.__protobuf__;
-        this.decodeIO_protobuf = app.components.__decodeIO__protobuf__;
+        this.protobuf = new ProtobufComponent(app, app.get('protobufConfig'));
 
         if (!this.ssl) {
             this.listeningServer = net.createServer();

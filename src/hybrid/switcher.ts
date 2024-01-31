@@ -1,14 +1,12 @@
-import { EventEmitter } from 'events';
-import * as util from 'util';
+import { EventEmitter } from 'node:events';
 import { WSProcessor } from './wsprocessor';
 import { TCPProcessor } from './tcpprocessor';
 import { getLogger } from 'pinus-logger';
-import * as net from 'net';
-import * as tls from 'tls';
-import { TlsOptions } from 'tls';
-import { TcpSocket } from './tcpsocket';
+import * as net from 'node:net';
+import * as tls from 'node:tls';
+import { TlsOptions } from 'node:tls';
 import { IHybridSocket } from './IHybridSocket';
-import * as path from 'path';
+import * as path from 'node:path';
 let logger = getLogger('pinus', path.basename(__filename));
 
 

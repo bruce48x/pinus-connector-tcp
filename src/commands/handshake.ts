@@ -1,6 +1,6 @@
 import { pinus } from 'pinus';
 import { Package } from 'pinus-protocol';
-import { ISocket } from 'pinus/lib/interfaces/ISocket';
+import { ISocket } from '../interfaces/ISocket';
 
 let CODE_OK = 200;
 let CODE_USE_ERROR = 500;

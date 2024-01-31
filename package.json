@@ -1,10 +1,11 @@
 {
   "name": "pinus-connector-tcp",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "tcp connector for pinus",
-  "main": "./dist/index.js",
+  "main": "./dist/hybridconnector",
+  "types": "./lib/hybridconnector",
   "scripts": {
-    "build": "tsc"
+    "build": "rimraf ./dist && tsc"
   },
   "repository": {
     "type": "git",
@@ -23,10 +24,17 @@
   "homepage": "https://github.com/bruce48x/pinus-connector-tcp#readme",
   "dependencies": {
     "pinus": "^1.7.0",
+    "pinus-protobufjs": "^1.0.2",
     "pinus-protocol": "^1.7.0",
     "ws": "^8.16.0"
   },
   "devDependencies": {
-    "@types/ws": "^8.5.10"
+    "@types/async": "^3.2.24",
+    "@types/crc": "^3.8.3",
+    "@types/node": "^16.0",
+    "@types/uuid": "^9.0.8",
+    "@types/ws": "^8.5.10",
+    "rimraf": "^5.0.5",
+    "typescript": "^4.3.5"
   }
 }

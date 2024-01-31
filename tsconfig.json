@@ -11,21 +11,25 @@
       "dom",
       "esnext"
     ],
+    "strict": false,
     "noImplicitAny": true, //在表达式和声明上有隐含的'any'类型时报错。
     "noImplicitThis": true,
     "inlineSourceMap": false,
+    "strictPropertyInitialization": false,
+    "esModuleInterop": false,
     "newLine": "lf", // 统一跨平台下编译文件的换行符
-
-    "rootDirs": ["."], //仅用来控制输出的目录结构--outDir。
-    "outDir": "./dist", //重定向输出目录。
+    "rootDir": "./src",
+    "outDir": "./dist",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
+    "skipLibCheck": true,
     "moduleResolution": "node"
   },
   "include": [
-    "./**/*.ts"
+    "./src/*.ts"
   ],
   "exclude": [
+    "node_modules",
     "./dist/**/*.*"
   ]
 }

@@ -3,9 +3,9 @@ import * as path from 'node:path';
 import {Package} from 'pinus-protocol';
 import {getLogger} from 'pinus-logger';
 import { default as handler } from './common/handler';
-import { ISocket } from 'pinus/lib/interfaces/ISocket';
 import { TcpSocket } from './hybrid/tcpsocket';
 import { IHybridSocket } from './hybrid/IHybridSocket';
+import { ISocket } from './interfaces/ISocket';
 
 let logger = getLogger('pinus', path.basename(__filename));
 

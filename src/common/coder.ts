@@ -1,8 +1,8 @@
 import { Message } from 'pinus-protocol';
-import * as  Constants from 'pinus/lib/util/constants';
 import { getLogger } from 'pinus-logger';
-import { IConnector } from 'pinus/lib/interfaces/IConnector';
-import * as path from 'path';
+import { IConnector } from '../interfaces/IConnector';
+import * as path from 'node:path';
+
 let logger = getLogger('pinus', path.basename(__filename));
 
 

@@ -1,9 +1,8 @@
 import { Package , Protocol } from 'pinus-protocol';
 import { getLogger } from 'pinus-logger';
-import { ISocket } from 'pinus/lib/interfaces/ISocket';
-import * as path from 'path';
+import * as path from 'node:path';
+import { ISocket } from '../interfaces/ISocket';
 let logger = getLogger('pinus', path.basename(__filename));
-
 
 let handlers: {[packageType: number]: (socket: ISocket , pkg: any) => void} = {};
 
